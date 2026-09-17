@@ -1,0 +1,13 @@
+{
+  "name": "mwc-ig",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline MWC Instagram image studio with 12 templates and safe-zone validation.",
+  "scripts": {
+    "build": "python scripts/build.py",
+    "test": "node tests/studio.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

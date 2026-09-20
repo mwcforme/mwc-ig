@@ -1,0 +1,2 @@
+const {chromium}=require('playwright');const path=require('path');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1500,height:1000}});await p.goto('file:///'+path.resolve('index.html').replaceAll('\\','/'));await p.waitForFunction(()=>document.querySelector('#status').textContent==='Ready to export');await p.screenshot({path:'test-results/reference-studio.png'});await p.click('#referencesButton');await p.screenshot({path:'test-results/reference-library.png'});await b.close()})().catch(e=>{console.error(e);process.exit(1)});
